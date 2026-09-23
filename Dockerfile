@@ -1,5 +1,7 @@
-FROM node:7.8.0
+FROM --platform=linux/amd64 node:7.8.0
 WORKDIR /opt
 ADD . /opt
 RUN npm install
-ENTRYPOINT npm run start
+EXPOSE 3000
+CMD ["npm", "start"]
+
